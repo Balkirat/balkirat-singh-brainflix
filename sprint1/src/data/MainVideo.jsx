@@ -6,12 +6,12 @@ const mainVideo = {
     title: 'BMX Rampage: 2018 Highlights',
     description: 'On a gusty day in Southern Utah, a group of 25 daring mountain bikers blew the doors off what is possible on two wheels, unleashing some of the biggest moments the sport has ever seen. While mother nature only allowed for one full run before the conditions ade it impossible to ride, that was all that was needed for event veteran Kyle Strait, who won the event for the second time -- eight years after his first Red Cow Rampage title',
     channel: 'By Red Cow',
-    image: {thumbnail00},
+    image: thumbnail00,
     views: '1,001,023',
     likes: '110,985',
     duration: '0.42',
     video: 'type of <string>',
-    timestamp: 12/18/2018,
+    timestamp: "12/18/2018",
     comments: [
         {
             name: "Micheal Lyon",
