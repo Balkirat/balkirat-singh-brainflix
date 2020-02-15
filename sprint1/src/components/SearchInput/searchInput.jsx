@@ -4,9 +4,9 @@ class SearchBar extends Component {
   state = {};
   render() {
     return (
-      <div className="searchForm">
+      <div >
         <form>
-          <input type="text" id="filter" placeholder="Search" />
+          <input className="header__searchform" type="text" id="filter" placeholder="Search" />
         </form>
       </div>
     );

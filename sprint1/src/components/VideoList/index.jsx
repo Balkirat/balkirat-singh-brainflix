@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import sideVideo from "../../data/SideVideo";
+import "../VideoList/styles.scss";
 
 class ReviewPod extends Component {
   constructor() {
@@ -9,7 +10,7 @@ class ReviewPod extends Component {
   render() {
     console.log(this.state);
     return (
-      <div>
+      <div className="sidevideo">
         {this.state.map(list => (
           <>
             <img src={list.image} alt="" />

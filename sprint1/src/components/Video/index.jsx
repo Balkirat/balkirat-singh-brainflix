@@ -1,10 +1,21 @@
 import React, { Component } from "react";
-import mainVideo from "../../data/MainVideo";
+import MainVideo from "../../data/MainVideo";
 
-export default function index(props) {
-  return (
-    <div>
-      <p>{props.idProp}</p>
+
+class Video extends Component {
+  constructor() {
+    super();
+    this.state = MainVideo;
+  }
+  render() {
+    console.log(this.state);
+    return (
+      <div>
+      <p>Video</p>
     </div>
-  );
+    );
+  }
 }
+
+export default Video;
+

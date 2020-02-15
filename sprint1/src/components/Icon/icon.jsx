@@ -1,11 +1,10 @@
 import React, { Component } from "react";
-import Logo from "../../assets/Logo/Logo.svg";
+import Image from "../../assets/Images/Mohan-muruge.jpg";
+// import '../Icon/styles.scss';
 
 function Icon() {
   return (
-    <div>
-      <img src={Logo} alt=""></img>;
-    </div>
+       <img className = "header__button--icon" src={Image} alt="" /> 
   );
 }
 

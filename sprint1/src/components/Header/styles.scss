@@ -1,0 +1,33 @@
+@import "../../styles/partials/resets";
+
+.header {
+  height: 169px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  &__searchform {
+    width: 90vw;
+    height: 40px;
+    margin: 12px 0 8px 0;
+    border-radius: 4px;
+  }
+  &__button {
+    width: 90vw;
+    &--upload {
+      width: 71vw;
+      height: 40px;
+      background-color: royalblue;
+      position: relative;
+      top: -20px;
+    }
+    &--icon {
+      border-radius: 50%;
+      width: 12.88vw;
+      height: 45px;
+      margin-left: 16px;
+    }
+  }
+}
+

@@ -1,14 +1,19 @@
 import React, { Component } from "react";
 import SearchBar from "../SearchInput/searchInput";
-import Logo from "../Icon/icon";
+import MainLogo from "../Logo/logo";
 import UploadButton from "../UploadButton/uploadButton";
+import Icon from "../Icon/icon";
+import "./styles.scss";
 
 function Header() {
   return (
-    <header>
-      <Logo />
+    <header className="header">
+      <MainLogo />
       <SearchBar />
-      <UploadButton />
+      <div className="header__button">
+        <UploadButton />
+        <Icon />
+      </div>
     </header>
   );
 }
