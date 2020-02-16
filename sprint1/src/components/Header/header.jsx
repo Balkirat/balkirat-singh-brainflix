@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import SearchBar from "../SearchInput/searchInput";
 import MainLogo from "../Logo/logo";
 import UploadButton from "../UploadButton/uploadButton";

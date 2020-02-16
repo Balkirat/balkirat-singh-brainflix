@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import Image from "../../assets/Images/Mohan-muruge.jpg";
 // import '../Icon/styles.scss';
 

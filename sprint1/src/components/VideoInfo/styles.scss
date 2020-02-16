@@ -1,0 +1,33 @@
+@import "../../styles/partials/resets";
+@import "../../styles/partials/variables";
+@import "../../styles/partials/breakpoints";
+
+.video {
+  padding: 0 16px;
+  &__channel {
+    margin-top: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__views {
+    display: flex;
+    align-items: center;
+    margin-bottom: 24px;
+  }
+  &__icon--views {
+    background: url("../../assets/Icons/SVG/Icon-views.svg");
+
+    height: 16px;
+    width: 22px;
+    display: inline-block;
+    margin-right: 8px;
+  }
+  &__icon--like {
+    background: url("../../assets/Icons/SVG/Icon-likes.svg");
+    height: 16px;
+    width: 17px;
+    display: inline-block;
+    margin: 0 8px 0 16px;
+  }
+}

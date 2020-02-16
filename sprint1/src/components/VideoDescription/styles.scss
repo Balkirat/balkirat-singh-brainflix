@@ -1,0 +1,11 @@
+@import "../../styles/partials/resets";
+@import "../../styles/partials/variables";
+@import "../../styles/partials/breakpoints";
+
+.description {
+  padding: 0 16px;
+  &__text {
+    padding-top: 24px;
+    border-top: 3px solid $border-color;
+  }
+}

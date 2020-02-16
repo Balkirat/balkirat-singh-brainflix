@@ -1,22 +1,26 @@
 import React, { Component } from "react";
-import sideVideo from "../../data/SideVideo";
+import SideVideo from "../../data/SideVideo";
+import MainVideo from "../../data/MainVideo";
 import "../VideoList/styles.scss";
 
-class ReviewPod extends Component {
+class VideoList extends Component {
   constructor() {
     super();
-    this.state = sideVideo;
+    var newList = SideVideo.filter(item => item.id !== MainVideo.id);
+    console.log("New Array:",newList);
+    this.state = newList;
   }
   render() {
     console.log(this.state);
+
     return (
       <div className="sidevideo">
         <h2>Next Video</h2>
         {this.state.map(list => (
           <div className="sidevideo__container">
             <img src={list.image} alt="" />
-            <div >
-              <p>{list.title}</p>
+            <div>
+              <p className="ellipsis">{list.title}</p>
               <p>{list.channel}</p>
             </div>
           </div>
@@ -26,4 +30,4 @@ class ReviewPod extends Component {
   }
 }
 
-export default ReviewPod;
+export default VideoList;
