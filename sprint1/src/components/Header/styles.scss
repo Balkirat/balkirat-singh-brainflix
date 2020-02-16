@@ -1,4 +1,7 @@
 @import "../../styles/partials/resets";
+@import "../../styles/partials/variables";
+@import "../../styles/partials/breakpoints";
+@import "../../styles/partials/fonts";
 
 .header {
   height: 169px;
@@ -7,27 +10,58 @@
   flex-direction: column;
   align-items: center;
   box-sizing: border-box;
+  @include tablet{
+    height: 80px;
+    padding: 24px;
+    display: flex;
+    flex-direction: row;
+  }
   &__searchform {
-    width: 90vw;
+    width: 280px;
     height: 40px;
     margin: 12px 0 8px 0;
     border-radius: 4px;
-  }
-  &__button {
-    width: 90vw;
-    &--upload {
-      width: 71vw;
-      height: 40px;
-      background-color: royalblue;
-      position: relative;
-      top: -20px;
+    @include tablet{
+      margin: 0 24px 0 169px;
+      width: 220px;
     }
     &--icon {
-      border-radius: 50%;
-      width: 12.88vw;
-      height: 45px;
-      margin-left: 16px;
+      background: url("../../assets/Icons/SVG/Icon-search.svg") no-repeat;
+      background-position: 10px;
+    }
+    &::placeholder {
+      padding-left: 34px;
     }
   }
+  &__button {
+    display: flex;
+    &--upload {
+      width: 230px;
+      height: 40px;
+      color: $text-background-color;
+      background-color: $background-color;
+      border-radius: 4px;
+      margin-right: 16px;
+    }
+    @include tablet {
+      width: 180px;
+      margin-right: 24px;
+    }
+    &--icon {
+      position: absolute;
+      top: 10px;
+      left: 19.12vw;
+      background: url("../../assets/Icons/SVG/Icon-upload.svg") no-repeat;
+      width: 15px;
+      height: 15px;
+    }
+  }
+
+  &__icon {
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+  }
 }
+
 

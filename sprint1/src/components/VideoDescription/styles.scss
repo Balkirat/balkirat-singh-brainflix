@@ -1,11 +1,16 @@
 @import "../../styles/partials/resets";
 @import "../../styles/partials/variables";
 @import "../../styles/partials/breakpoints";
+@import "../../styles/partials/fonts";
 
 .description {
   padding: 0 16px;
+  
   &__text {
+    font-size: 13px;
     padding-top: 24px;
+    line-height: 18px;
     border-top: 3px solid $border-color;
+    opacity: .8;
   }
 }

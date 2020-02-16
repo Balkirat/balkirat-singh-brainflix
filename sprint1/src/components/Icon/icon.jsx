@@ -4,7 +4,7 @@ import Image from "../../assets/Images/Mohan-muruge.jpg";
 
 function Icon() {
   return (
-       <img className = "header__button--icon" src={Image} alt="" /> 
+       <img className = "header__icon" src={Image} alt="" /> 
   );
 }
 

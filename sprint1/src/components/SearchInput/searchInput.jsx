@@ -6,7 +6,7 @@ class SearchBar extends Component {
     return (
       <div >
         <form>
-          <input className="header__searchform" type="text" id="filter" placeholder="Search" />
+          <input className="header__searchform header__searchform--icon" type="text" placeholder="Search" ></input>
         </form>
       </div>
     );

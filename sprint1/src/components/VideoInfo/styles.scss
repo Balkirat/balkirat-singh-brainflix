@@ -1,14 +1,28 @@
 @import "../../styles/partials/resets";
 @import "../../styles/partials/variables";
 @import "../../styles/partials/breakpoints";
+@import "../../styles/partials/fonts";
 
 .video {
   padding: 0 16px;
+  &__header {
+    font-family: "AvenirDemiBold";
+    font-size: 1.25rem;
+    line-height: 22px;
+  }
   &__channel {
     margin-top: 16px;
     display: flex;
+    font-family: "";
     align-items: center;
-    justify-content: space-between;
+    & h5 {
+      margin: 0 8px 32px 0;
+    }
+    & p {
+      font-size: 0.75rem;
+      margin: 0 0 32px 0;
+      opacity: 0.5;
+    }
   }
   &__views {
     display: flex;
@@ -17,7 +31,6 @@
   }
   &__icon--views {
     background: url("../../assets/Icons/SVG/Icon-views.svg");
-
     height: 16px;
     width: 22px;
     display: inline-block;

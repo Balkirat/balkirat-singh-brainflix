@@ -1,15 +1,36 @@
 @import "../../styles/partials/resets";
 @import "../../styles/partials/variables";
 @import "../../styles/partials/breakpoints";
+@import "../../styles/partials/fonts";
 
 video {
   width: 100%;
 }
+.hero {
+  &__playicon {
+    padding: 5px 15px;
+    background-color: black;
+    position: relative;
+    bottom: 45px;
+    left: 15px;
+  }
+  &__fullscreenicon {
+    background: url("../../assets/Icons/SVG/Icon-fullscreen.svg");
+  }
+  &__volumeicon {
+    padding: 6.55px 15px;
+    background-color: black;
+    position: relative;
+    bottom: 46px;
+    right: -185px;
+  }
+}
+
 .comments {
   box-sizing: border-box;
-  background-color: $text-background-color;
   padding: 2rem 1rem 2.5rem 1rem;
-  font-family: "AvenirDemiBold";
+  font-family: "AvenirMediumBold";
+  font-size: 16px;
   @include tablet {
     padding-left: 24px;
     padding-right: 24px;
@@ -19,18 +40,24 @@ video {
     padding: 48px 155px 40px 155px;
   }
   &__heading {
-    font-family: "AvenirBold";
-    padding-bottom: 2.5rem;
+    font-family: "AvenirDemiBold";
+    padding-bottom: 2rem;
     @include tablet {
       font-size: 2.5rem;
       padding-bottom: 50px;
     }
   }
+  &__text{
+    font-family: "AvenirRegular";
+    font-size: 10px;
+    margin: 0 0 4px 18.75vw;
+    opacity: .5;
+  }
   &__form {
     display: flex;
     justify-content: space-evenly;
     box-sizing: border-box;
-    padding-bottom: 32px;
+    padding-bottom: 24px;
     border-bottom: 2px solid $border-color;
     @include tablet {
       width: 66vw;
@@ -40,11 +67,13 @@ video {
       width: 70vw;
       height: 3rem;
       border: none;
+      font-size: 12px;
       font-family: "AvenirRegular";
       font-size: 1rem;
       border-radius: 4px;
       color: #ffffff;
-      background-color: $primary-color;
+      margin-left: 16px;
+      background-color: $background-color;
       @include tablet {
         width: 20.83vw;
         float: right;
@@ -53,17 +82,18 @@ video {
   }
   textarea {
     width: 63.75vw;
-    height: 80px;
+    height: 75px;
     border: 1px solid $border-color;
     box-shadow: 1px 1px 1px $border-color;
     border-radius: 6px;
+    line-height: 18px;
     font-family: "AvenirRegular";
     padding: 9px;
-    margin: 0 0 16px 0;
-    font-size: 1rem;
+    margin: 0 0 16px 16px;
+    font-size: 14px;
     &:focus {
       outline: 0;
-      border: 2px solid $primary-color;
+      border: 2px solid $background-color;
     }
     @include tablet {
       width: 55.25vw;
@@ -71,17 +101,16 @@ video {
     }
   }
 }
-.header__button--icon{
-    margin: 0 16px 0 0;
-}
+
 .comments__section {
-  font-size: 1rem;
+  font-size: 0.75rem;
   font-family: "AvenirRegular";
   display: flex;
   justify-content: center;
   box-sizing: border-box;
   padding: 24px 0;
   border-bottom: 2px solid $border-color;
+  line-height: 18px;
   @include tablet {
     width: 66vw;
     margin: auto auto;
@@ -98,16 +127,16 @@ video {
     display: flex;
     flex-wrap: wrap;
     width: 70vw;
-    font-size: 14px;
+    font-size: 0.75rem;
     @include tablet {
       width: 56.25vw;
     }
     &--inline {
       width: 100%;
-      padding-bottom: 16px;
+      padding-bottom: 14px;
       display: flex;
-      justify-content: baseline;
-      & h3 {
+      justify-content: space-between;
+      & h2 {
         width: 70%;
         @include tablet {
           width: max-content;
@@ -119,6 +148,9 @@ video {
         top: 2px;
         opacity: 0.5;
       }
+    }
+    &--opacity{
+      opacity: 0.7;
     }
   }
 }
