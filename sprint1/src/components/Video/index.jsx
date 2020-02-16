@@ -43,8 +43,7 @@ class Video extends Component {
             </div>
           </form>
           <div className="comment__container"></div>
-        </section>
-        <section>
+
           {this.state.comments.map(comment => (
             <Comment
               name={comment.name}

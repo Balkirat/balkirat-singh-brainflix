@@ -1,7 +1,16 @@
 .sidevideo {
-  width: 150px;
+  padding: 0 16px 0 16px;
+  
+  &__container{
+    margin-top: 24px;
+    display: flex;
+    flex-direction: row;
+  }
+
   & img {
-    width: 50px;
-    height: 40px;
+    margin-right: 16px;
+    border-radius: 4px;
+    width: 120px;
+    height: 70px;
   }
 }

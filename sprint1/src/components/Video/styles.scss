@@ -1,4 +1,124 @@
+@import "../../styles/partials/resets";
+@import "../../styles/partials/variables";
+@import "../../styles/partials/breakpoints";
+
 video {
-    width: 100%;
-    
+  width: 100%;
+}
+.comments {
+  box-sizing: border-box;
+  background-color: $text-background-color;
+  padding: 2rem 1rem 2.5rem 1rem;
+  font-family: "AvenirDemiBold";
+  @include tablet {
+    padding-left: 24px;
+    padding-right: 24px;
+    font-size: 1rem;
+  }
+  @include desktop {
+    padding: 48px 155px 40px 155px;
+  }
+  &__heading {
+    font-family: "AvenirBold";
+    padding-bottom: 2.5rem;
+    @include tablet {
+      font-size: 2.5rem;
+      padding-bottom: 50px;
+    }
+  }
+  &__form {
+    display: flex;
+    justify-content: space-evenly;
+    box-sizing: border-box;
+    padding-bottom: 32px;
+    border-bottom: 2px solid $border-color;
+    @include tablet {
+      width: 66vw;
+      margin: auto auto;
+    }
+    &__button {
+      width: 70vw;
+      height: 3rem;
+      border: none;
+      font-family: "AvenirRegular";
+      font-size: 1rem;
+      border-radius: 4px;
+      color: #ffffff;
+      background-color: $primary-color;
+      @include tablet {
+        width: 20.83vw;
+        float: right;
+      }
+    }
+  }
+  textarea {
+    width: 63.75vw;
+    height: 80px;
+    border: 1px solid $border-color;
+    box-shadow: 1px 1px 1px $border-color;
+    border-radius: 6px;
+    font-family: "AvenirRegular";
+    padding: 9px;
+    margin: 0 0 16px 0;
+    font-size: 1rem;
+    &:focus {
+      outline: 0;
+      border: 2px solid $primary-color;
+    }
+    @include tablet {
+      width: 55.25vw;
+      height: 96px;
+    }
+  }
+}
+.header__button--icon{
+    margin: 0 16px 0 0;
+}
+.comments__section {
+  font-size: 1rem;
+  font-family: "AvenirRegular";
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 24px 0;
+  border-bottom: 2px solid $border-color;
+  @include tablet {
+    width: 66vw;
+    margin: auto auto;
+    justify-content: flex-start;
+  }
+  &__image {
+    margin-right: 16px;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    background: lightgray;
+  }
+  &__text {
+    display: flex;
+    flex-wrap: wrap;
+    width: 70vw;
+    font-size: 14px;
+    @include tablet {
+      width: 56.25vw;
+    }
+    &--inline {
+      width: 100%;
+      padding-bottom: 16px;
+      display: flex;
+      justify-content: baseline;
+      & h3 {
+        width: 70%;
+        @include tablet {
+          width: max-content;
+          margin-right: 20px;
+        }
+      }
+      & p {
+        position: relative;
+        top: 2px;
+        opacity: 0.5;
+      }
+    }
+  }
 }
