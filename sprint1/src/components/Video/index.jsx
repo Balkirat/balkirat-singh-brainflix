@@ -20,15 +20,9 @@ class Video extends Component {
     return (
       <main className="hero">
         <div className="hero__video">
-        <video
-          src=""
-          poster={this.state.image}
-          className="hero__fullscreenicon"
-        >
-          <span className="hero__fullscreenicon hero__volumeicon"></span>
-        </video>
+          <video src="" poster={this.state.image}></video>
         </div>
- 
+
         <img className="hero__playicon" src={PlayIcon} alt="" />
         {/* <img className="hero__fullscreenicon" src={FullscreenIcon} alt=""/>
         <img className="hero__volumeicon" src={VolumeIcon} alt=""/> */}

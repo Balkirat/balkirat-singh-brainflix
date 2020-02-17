@@ -8,6 +8,9 @@
   @include tablet{
     padding: 0 24px;
   }
+  @include desktop{
+    padding: 0 155px;
+  }
   &__header {
     font-family: "AvenirDemiBold";
     font-size: 1.25rem;
@@ -52,6 +55,9 @@
     @include tablet {
       margin-bottom: 0;
       margin-top: -10px;
+    }
+    @include desktop{
+      padding-right: 250px;
     }
   }
   &__icon--views {

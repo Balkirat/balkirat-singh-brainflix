@@ -6,6 +6,9 @@
 .sidevideo {
   padding: 0 16px 16px 16px;
   font-family: "AvenirDemiBold";
+  @include tablet{
+    padding: 0 24px 24px 24px;
+  }
   &__header {
     font-size: 13px;
     opacity: 0.5;

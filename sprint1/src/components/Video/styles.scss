@@ -6,12 +6,20 @@
 .hero {
   & video {
     width: 100%;
+    height: 100%;
+    object-fit: cover;
     @include tablet {
-      width: 93.75vw;
+      width: 95.5%;
       background: black;
       padding: 0 24px;
     }
+    @include desktop {
+      width: 72%;
+      height: 100%;
+      padding: 0 180px;
+    }
   }
+
   &__playicon {
     padding: 5px 15px;
     background-color: $primary-color;
@@ -61,6 +69,9 @@
       margin: 0 0 4px 10.75vw;
       font-size: 12px;
     }
+    @include desktop{
+      margin: 0 0 4px 7.25vw;
+    }
   }
   &__form {
     display: flex;
@@ -99,15 +110,19 @@
     font-family: "AvenirRegular";
     padding: 9px;
     margin: 0 0 16px 16px;
-    font-size: 14px;
+    font-size: 13px;
     &:focus {
       outline: 0;
       border: 2px solid $background-color;
     }
     @include tablet {
+      font-size: 14px;
       padding: 1rem;
       width: 50.25vw;
-      height: 13px;
+      height: 18px;
+    }
+    @include desktop{
+      width: 45.25vw;
     }
   }
   ::placeholder {

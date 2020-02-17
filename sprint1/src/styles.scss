@@ -1,0 +1,10 @@
+@import "./styles/partials/resets";
+@import "./styles/partials/variables";
+@import "./styles/partials/breakpoints";
+@import "./styles/partials/fonts";
+
+.desktop__flex{
+    @include desktop{
+        display: flex;
+    }
+}
