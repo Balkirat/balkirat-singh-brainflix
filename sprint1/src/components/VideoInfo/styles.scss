@@ -5,16 +5,36 @@
 
 .video {
   padding: 0 16px;
+  @include tablet{
+    padding: 0 24px;
+  }
   &__header {
     font-family: "AvenirDemiBold";
     font-size: 1.25rem;
     line-height: 22px;
+    @include tablet {
+      font-family: "AvenirBold";
+      font-size: 2.25rem;
+    }
+  }
+
+  &__tablet--wrapper {
+    @include tablet {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
   }
   &__channel {
     margin-top: 16px;
     display: flex;
     font-family: "";
     align-items: center;
+    @include tablet {
+      margin-bottom: 0;
+        font-size: 1.2rem;
+        margin: 24px 0 0 0;
+    }
     & h5 {
       margin: 0 8px 32px 0;
     }
@@ -22,12 +42,17 @@
       font-size: 0.75rem;
       margin: 0 0 32px 0;
       opacity: 0.5;
+      
     }
   }
-  &__views {
+  &__icon {
     display: flex;
     align-items: center;
     margin-bottom: 24px;
+    @include tablet {
+      margin-bottom: 0;
+      margin-top: -10px;
+    }
   }
   &__icon--views {
     background: url("../../assets/Icons/SVG/Icon-views.svg");

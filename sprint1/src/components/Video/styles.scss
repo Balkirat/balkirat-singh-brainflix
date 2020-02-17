@@ -3,13 +3,18 @@
 @import "../../styles/partials/breakpoints";
 @import "../../styles/partials/fonts";
 
-video {
-  width: 100%;
-}
 .hero {
+  & video {
+    width: 100%;
+    @include tablet {
+      width: 93.75vw;
+      background: black;
+      padding: 0 24px;
+    }
+  }
   &__playicon {
     padding: 5px 15px;
-    background-color: black;
+    background-color: $primary-color;
     position: relative;
     bottom: 45px;
     left: 15px;
@@ -19,7 +24,7 @@ video {
   }
   &__volumeicon {
     padding: 6.55px 15px;
-    background-color: black;
+    background-color: $primary-color;
     position: relative;
     bottom: 46px;
     right: -185px;
@@ -29,7 +34,7 @@ video {
 .comments {
   box-sizing: border-box;
   padding: 2rem 1rem 2.5rem 1rem;
-  font-family: "AvenirMediumBold";
+  font-family: "AvenirDemiBold";
   font-size: 16px;
   @include tablet {
     padding-left: 24px;
@@ -43,15 +48,19 @@ video {
     font-family: "AvenirDemiBold";
     padding-bottom: 2rem;
     @include tablet {
-      font-size: 2.5rem;
-      padding-bottom: 50px;
+      font-size: 1.5rem;
+      padding-bottom: 2rem;
     }
   }
-  &__text{
+  &__text {
     font-family: "AvenirRegular";
     font-size: 10px;
     margin: 0 0 4px 18.75vw;
-    opacity: .5;
+    opacity: 0.5;
+    @include tablet {
+      margin: 0 0 4px 10.75vw;
+      font-size: 12px;
+    }
   }
   &__form {
     display: flex;
@@ -60,8 +69,7 @@ video {
     padding-bottom: 24px;
     border-bottom: 2px solid $border-color;
     @include tablet {
-      width: 66vw;
-      margin: auto auto;
+      padding-bottom: 0;
     }
     &__button {
       width: 70vw;
@@ -75,8 +83,9 @@ video {
       margin-left: 16px;
       background-color: $background-color;
       @include tablet {
-        width: 20.83vw;
+        width: 160px;
         float: right;
+        margin: 0 40px 0 16px;
       }
     }
   }
@@ -96,9 +105,13 @@ video {
       border: 2px solid $background-color;
     }
     @include tablet {
-      width: 55.25vw;
-      height: 96px;
+      padding: 1rem;
+      width: 50.25vw;
+      height: 13px;
     }
+  }
+  ::placeholder {
+    color: $primary-color;
   }
 }
 
@@ -112,8 +125,8 @@ video {
   border-bottom: 2px solid $border-color;
   line-height: 18px;
   @include tablet {
-    width: 66vw;
-    margin: auto auto;
+    font-size: 1rem;
+    width: 100%;
     justify-content: flex-start;
   }
   &__image {
@@ -129,18 +142,26 @@ video {
     width: 70vw;
     font-size: 0.75rem;
     @include tablet {
-      width: 56.25vw;
+      font-size: 14px;
+
+      width: 100%;
     }
     &--inline {
       width: 100%;
       padding-bottom: 14px;
       display: flex;
       justify-content: space-between;
-      & h2 {
+      @include tablet {
+        justify-content: flex-start;
+        line-height: 22px;
+      }
+      & h3 {
         width: 70%;
         @include tablet {
+          font-family: "AvenirDemiBold";
           width: max-content;
           margin-right: 20px;
+          font-size: 1rem;
         }
       }
       & p {
@@ -149,7 +170,7 @@ video {
         opacity: 0.5;
       }
     }
-    &--opacity{
+    &--opacity {
       opacity: 0.7;
     }
   }

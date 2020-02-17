@@ -5,7 +5,9 @@ const Description = props => {
   console.log(props);
   return (
     <div className="description">
-      <p className="description__text">{props.description}</p>
+      <div className="description__border">
+        <p className="description__text">{props.description}</p>
+      </div>
     </div>
   );
 };
