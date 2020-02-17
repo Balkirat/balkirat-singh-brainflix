@@ -6,5 +6,6 @@
 .desktop__flex{
     @include desktop{
         display: flex;
+        justify-content: space-between;
     }
 }

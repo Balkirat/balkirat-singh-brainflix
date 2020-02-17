@@ -6,8 +6,13 @@
 .sidevideo {
   padding: 0 16px 16px 16px;
   font-family: "AvenirDemiBold";
-  @include tablet{
+  @include tablet {
     padding: 0 24px 24px 24px;
+  }
+  @include desktop {
+    position: absolute;
+    top: 598px;
+    left: 790px;
   }
   &__header {
     font-size: 13px;
@@ -17,8 +22,12 @@
     margin-top: 24px;
     display: flex;
     flex-direction: row;
-    @include tablet{
+    @include tablet {
       width: 44%;
+    }
+    @include desktop {
+      margin-top: 32px;
+      width: 90%;
     }
   }
   & img {
@@ -38,8 +47,8 @@
     line-height: 18px;
     margin: 2px 0 16px 0;
   }
-  &__channel{
+  &__channel {
     font-size: 12px;
-    opacity: .8;
+    opacity: 0.8;
   }
 }

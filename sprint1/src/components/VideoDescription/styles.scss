@@ -9,6 +9,7 @@
     padding: 0 24px;
   }
   @include desktop{
+    width: 53%;
     padding: 0 155px;
   }
   &__border{
@@ -25,7 +26,7 @@
       line-height: 22px;
     }
     @include desktop{
-      width: 65%;
+      width: 85%;
       font-size: 1rem;
       line-height: 22px;
     }
