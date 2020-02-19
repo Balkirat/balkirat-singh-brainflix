@@ -1,9 +1,10 @@
 import React from "react";
+import uploadIcon from "../../assets/Icons/SVG/Icon-upload.svg";
 
 function UploadButton() {
   return (
     <button className="header__button--upload">
-      <span className="header__button--icon"></span>UPLOAD
+      <img src={uploadIcon} className="header__button--icon"></img>UPLOAD
     </button>
   );
 }

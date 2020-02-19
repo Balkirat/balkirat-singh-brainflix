@@ -12,21 +12,26 @@
   box-sizing: border-box;
   @include tablet{
     height: 80px;
-    padding: 24px;
+    padding: 0 24px;
     display: flex;
     flex-direction: row;
+    justify-content: center;
   }
   @include desktop{
     padding: 0 155px;
+    justify-content: center;
   }
   &__searchform {
     width: 280px;
     height: 40px;
     margin: 12px 0 8px 0;
     border-radius: 4px;
+    &::placeholder {
+      padding-left: 34px;
+    }
     @include tablet{
       margin: 0 24px 0 169px;
-      width: 220px;
+      width: 200px;
     }
     @include desktop{
       margin: 0 24px 0 355px;
@@ -35,15 +40,13 @@
       background: url("../../assets/Icons/SVG/Icon-search.svg") no-repeat;
       background-position: 10px;
     }
-    &::placeholder {
-      padding-left: 34px;
-    }
   }
   &__button {
+    width: 90vw;
     display: flex;
-    &--upload {
+    justify-content: center;
+    &--upload {  
       width: 230px;
-      height: 40px;
       color: $text-background-color;
       background-color: $background-color;
       border-radius: 4px;
@@ -51,21 +54,17 @@
     }
     @include tablet {
       width: 180px;
-      margin-right: 24px;
     }
     &--icon {
-      position: absolute;
-      top: 10px;
-      left: 19.12vw;
-      background: url("../../assets/Icons/SVG/Icon-upload.svg") no-repeat;
       width: 15px;
       height: 15px;
+      padding-right: 12px;     /* make text start to the right of the image */
     }
   }
 
   &__icon {
     border-radius: 50%;
-    width: 45px;
+    width: 46px;
     height: 45px;
   }
 }

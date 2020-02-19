@@ -9,25 +9,24 @@
   @include tablet {
     padding: 0 24px 24px 24px;
   }
-  @include desktop {
-    position: absolute;
-    top: 598px;
-    left: 790px;
-  }
   &__header {
     font-size: 13px;
     opacity: 0.5;
+  }
+  @include desktop{
+    padding-bottom: 40px;
   }
   &__container {
     margin-top: 24px;
     display: flex;
     flex-direction: row;
     @include tablet {
+      
       width: 44%;
     }
-    @include desktop {
-      margin-top: 32px;
-      width: 90%;
+    @include desktop{
+      margin-top: 28px;
+      width: 78%;
     }
   }
   & img {

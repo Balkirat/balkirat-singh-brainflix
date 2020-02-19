@@ -3,9 +3,9 @@
 @import "./styles/partials/breakpoints";
 @import "./styles/partials/fonts";
 
-.desktop__flex{
-    @include desktop{
-        display: flex;
-        justify-content: space-between;
-    }
+.desktop__flex {
+  @include desktop {
+    display: flex;
+    justify-content: space-between;
+  }
 }
