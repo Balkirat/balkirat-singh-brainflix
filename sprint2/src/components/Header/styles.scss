@@ -1,0 +1,76 @@
+@import "../../styles/partials/resets";
+@import "../../styles/partials/variables";
+@import "../../styles/partials/breakpoints";
+@import "../../styles/partials/fonts";
+
+.header {
+  height: 169px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  @include tablet{
+    height: 80px;
+    padding: 0 24px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  @include desktop{
+    padding: 0 155px;
+    justify-content: center;
+  }
+  &__searchform {
+    width: 280px;
+    height: 40px;
+    margin: 12px 0 8px 0;
+    border-radius: 4px;
+    border-style: groove;
+    border-color:$text-background-color;
+    &::placeholder {
+      padding-left: 34px;
+    }
+    @include tablet{
+      margin: 0 24px 0 169px;
+      width: 200px;
+    }
+    @include desktop{
+      margin: 0 24px 0 355px;
+    }
+    &--icon {
+      background: url("../../assets/Icons/SVG/Icon-search.svg") no-repeat;
+      background-position: 10px;
+    }
+  }
+  &__button {
+    width: 90vw;
+    display: flex;
+    justify-content: center;
+    &--upload {  
+      width: 224px;
+      height: 100%;
+      color: $text-background-color;
+      background-color: $background-color;
+      border-style: none;
+      border-radius: 4px;
+      margin-right: 16px;
+    }
+    @include tablet {
+      width: 180px;
+    }
+    &--icon {
+      width: 15px;
+      height: 15px;
+      padding-right: 12px;     /* make text start to the right of the image */
+    }
+  }
+
+  &__icon {
+    border-radius: 50%;
+    width: 46px;
+    height: 45px;
+  }
+}
+
+

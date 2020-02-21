@@ -1,0 +1,15 @@
+import React from "react";
+import "../VideoDescription/styles.scss";
+
+const Description = props => {
+  console.log(props);
+  return (
+    <div className="description">
+      <div className="description__border">
+        <p className="description__text">{props.description}</p>
+      </div>
+    </div>
+  );
+};
+
+export default Description;

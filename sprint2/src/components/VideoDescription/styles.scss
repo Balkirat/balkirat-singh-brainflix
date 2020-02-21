@@ -1,0 +1,34 @@
+@import "../../styles/partials/resets";
+@import "../../styles/partials/variables";
+@import "../../styles/partials/breakpoints";
+@import "../../styles/partials/fonts";
+
+.description {
+  padding: 0 16px;
+  @include tablet{
+    padding: 0 24px;
+  }
+  @include desktop{
+    padding:0 0 0 155px;
+    width: 80%;
+  }
+  &__border{
+    border-top: 3px solid $border-color;
+  }
+  &__text {
+    font-size: 13px;
+    padding-top: 24px;
+    line-height: 18px;
+    opacity: .8;
+    @include tablet{
+      width:70%;
+      font-size: 14px;
+      line-height: 22px;
+    }
+    @include desktop{
+      width: 95%;
+      font-size: 1rem;
+      line-height: 22px;
+    }
+  }
+}
