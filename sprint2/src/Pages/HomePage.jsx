@@ -1,19 +1,62 @@
 import React, { Component } from "react";
-
+import axios from "axios";
+import { API_URL } from "../App";
 import VideoList from "../components/VideoList/index";
 import Video from "../components/Video/index";
-import SideVideo from "../data/SideVideo";
-import MainVideo from "../data/MainVideo";
 import HeroVideo from "../components/Hero/Hero";
 
+const apiKey = "2ae78d53-3395-4750-bd93-293f82257824";
 // import "../styles.scss";
 
 class HomePage extends Component {
-  state = {
-    sideVideo: SideVideo,
-    mainVideo: MainVideo
-  };
+  constructor() {
+    super();
+    this.state = {
+      sideVideo: [],
+      mainVideo: {},
+      showMainVideo: false
+    };
+  }
 
+  defaultVideo() {
+    axios.get(`${API_URL}/videos?api_key=${apiKey}`).then(response => {
+      console.log(response.data);
+      this.setState({
+        sideVideo: response.data,
+       
+      });
+      axios
+        .get(`${API_URL}/videos/${response.data[0].id}?api_key=${apiKey}`)
+        .then(response => {
+          console.log("In HomePAge", response.data);
+          this.setState({
+            mainVideo: response.data,
+            showMainVideo: true
+          });
+        });
+    });
+  }
+
+  componentDidMount() {
+    this.defaultVideo();
+  }
+
+  componentDidUpdate(prevProps){
+    console.log("this is Previsos :",prevProps)
+    
+    if (this.props.match.params.id !== prevProps.match.params.id){
+        console.log("in if")
+         axios
+        .get(`${API_URL}/videos/${this.props.match.params.id}?api_key=${apiKey}`)
+        .then(response => {
+          console.log("In HomePAge", response.data);
+          this.setState({
+            mainVideo: response.data,
+            
+          });
+        });
+      }
+  }
   filteredVideoList = () => {
     return this.state.sideVideo.filter(
       item => item.id !== this.state.mainVideo.id
@@ -21,13 +64,18 @@ class HomePage extends Component {
   };
 
   render() {
-    console.log("In Home Page", this.state);
+    console.log("to check props.param",this.props.match.params)
     return (
       <>
-        <HeroVideo heroVideo={this.state.mainVideo} />
+        {this.state.showMainVideo && (
+          <HeroVideo heroVideo={this.state.mainVideo} />
+        )}
         <div className="desktop__flex">
-          <Video mainVideo={this.state.mainVideo} />
-          <VideoList videoList={this.filteredVideoList()} />
+          {this.state.showMainVideo && (
+            <Video mainVideo={this.state.mainVideo} />
+          )}
+          {this.state.showMainVideo && 
+          <VideoList videoList={this.filteredVideoList()} />}
         </div>
       </>
     );

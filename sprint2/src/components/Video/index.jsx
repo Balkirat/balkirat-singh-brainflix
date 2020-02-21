@@ -38,7 +38,7 @@ const Video = props => {
           </div>
         </form>
         <div className="comment__container"></div>
-
+        {/* {console.log("GGGGGGG", props.mainVideo.comments.length)} */}
         {props.mainVideo.comments.map(comment => (
           <Comment
             name={comment.name}
