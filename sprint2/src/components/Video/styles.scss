@@ -23,9 +23,11 @@
   &__video__poster {
     box-sizing: border-box;
     width: 100%;
+    height: 183px;
     object-fit: cover;
     @include tablet {
       width: 100%;
+      height: 400px;
       background: black;
       padding: 0 34px;
     }
@@ -139,7 +141,7 @@
     border-bottom: 2px solid $border-color;
     box-sizing: border-box;
     @include tablet {
-      width: 85%;
+      width: 100%;
       padding-bottom: 0;
       justify-content: flex-start;
     }
@@ -150,6 +152,9 @@
       width: 100%;
       margin-left: 16px;
       box-sizing: border-box;
+      @include desktop {
+        width: auto;
+      }
     }
     &__textarea {
       border-style: groove;
@@ -172,12 +177,12 @@
       @include tablet {
         font-size: 14px;
         padding: 1rem;
-        width: 50.25vw;
-        height: 18px;
+        width: 67%;
+        height: 51px;
       }
       @include desktop {
         width: 28.25vw;
-        height: 20px;
+        height: 54px;
       
       }
     }

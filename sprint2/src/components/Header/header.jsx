@@ -9,10 +9,10 @@ import {Link} from 'react-router-dom';
 function Header() {
   return (
     <header className="header">
-      <Link to='/'><MainLogo /></Link>
+      <Link style={{ textDecoration: 'none' }} to='/'><MainLogo /></Link>
       <SearchBar />
       <div className="header__button">
-      <Link to='/upload'><UploadButton /></Link>
+      <Link  style={{ textDecoration: 'none' }} to='/upload'><UploadButton /></Link>
         <Icon />
       </div>
     </header>

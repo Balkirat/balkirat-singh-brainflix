@@ -9,7 +9,7 @@ const Info = props => {
       <h2 className="video__header">{props.title}</h2>
       <div className="video__tablet--wrapper">
         <div className="video__channel">
-          <h5>{props.channel}</h5>
+          <h5>By {props.channel}</h5>
           <p>{props.timeStamp}</p>
         </div>
         <div className="video__icon"> 
