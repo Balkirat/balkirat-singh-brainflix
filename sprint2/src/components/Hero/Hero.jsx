@@ -13,8 +13,10 @@ let HeroVideo = props => {
           poster={props.heroVideo.image}
         ></video>
         <div className="hero__video__buttons">
-          <img className="hero__playicon" src={PlayIcon} alt="playicon" />
-          <span className="hero__play-progress"><hr className="hero__play-progress--bar"></hr></span>
+          <img className="hero__play-icon" src={PlayIcon} alt="playicon" />
+          <span className="hero__play-progress">
+            <hr className="hero__play-progress--bar"></hr>
+          </span>
           <div>
             <img className="hero__fullscreenicon" src={FullscreenIcon} alt="" />
             <img className="hero__volumeicon" src={VolumeIcon} alt="" />

@@ -22,8 +22,7 @@ class HomePage extends Component {
     axios.get(`${API_URL}/videos?api_key=${apiKey}`).then(response => {
       console.log(response.data);
       this.setState({
-        sideVideo: response.data,
-       
+        sideVideo: response.data
       });
       axios
         .get(`${API_URL}/videos/${response.data[0].id}?api_key=${apiKey}`)
@@ -41,21 +40,34 @@ class HomePage extends Component {
     this.defaultVideo();
   }
 
-  componentDidUpdate(prevProps){
-    console.log("this is Previsos :",prevProps)
-    
-    if (this.props.match.params.id !== prevProps.match.params.id){
-        console.log("in if")
-         axios
-        .get(`${API_URL}/videos/${this.props.match.params.id}?api_key=${apiKey}`)
-        .then(response => {
-          console.log("In HomePAge", response.data);
-          this.setState({
-            mainVideo: response.data,
-            
+  componentDidUpdate(prevProps) {
+    console.log("this is Previsos :", prevProps);
+
+    if (this.props.match.params.id !== prevProps.match.params.id) {
+      if (this.props.match.params.id !== undefined) {
+        console.log("in if");
+        axios
+          .get(
+            `${API_URL}/videos/${this.props.match.params.id}?api_key=${apiKey}`
+          )
+          .then(response => {
+            console.log("In HomePAge", response.data);
+            this.setState({
+              mainVideo: response.data
+            });
           });
-        });
+      } else {
+        console.log("in else");
+        axios
+          .get(`${API_URL}/videos/1af0jruup5gu?api_key=${apiKey}`)
+          .then(response => {
+            console.log("In HomePAge", response.data);
+            this.setState({
+              mainVideo: response.data
+            });
+          });
       }
+    }
   }
   filteredVideoList = () => {
     return this.state.sideVideo.filter(
@@ -64,7 +76,7 @@ class HomePage extends Component {
   };
 
   render() {
-    console.log("to check props.param",this.props.match.params)
+    console.log("to check props.param", this.props.match.params);
     return (
       <>
         {this.state.showMainVideo && (
@@ -74,8 +86,9 @@ class HomePage extends Component {
           {this.state.showMainVideo && (
             <Video mainVideo={this.state.mainVideo} />
           )}
-          {this.state.showMainVideo && 
-          <VideoList videoList={this.filteredVideoList()} />}
+          {this.state.showMainVideo && (
+            <VideoList videoList={this.filteredVideoList()} />
+          )}
         </div>
       </>
     );

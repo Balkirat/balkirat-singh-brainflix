@@ -25,8 +25,9 @@ const Video = props => {
           <div>
             <Icon />
           </div>
-          <div>
+          <div className="comments__form__wrapper">
             <textarea
+              className="comments__form__textarea"
               placeholder="That was easily the most
                 spectacular BMX moment ever."
               name="comments"

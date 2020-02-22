@@ -7,9 +7,9 @@ function Upload() {
   return (
     <>
       <h1>UpLoad Video</h1>
-      <div className="hero">
-        <h4 className="hero__subheading">VIDEO THUMBNAIL</h4>
-        <video className="hero__video-thumbnail" poster={Thumbnail}></video>
+      <div className="upload-hero">
+        <h4 className="upload-hero__subheading">VIDEO THUMBNAIL</h4>
+        <video className="upload-hero__video-thumbnail" poster={Thumbnail}></video>
       </div>
       <form className="form">
         <label className="form__label" for="titleVideo">TITLE YOUR VIDEO</label>
