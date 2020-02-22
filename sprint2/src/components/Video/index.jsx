@@ -7,7 +7,7 @@ import Icon from "../Icon/icon";
 import "./styles.scss";
 
 const Video = props => {
-  console.log("In video", props.mainVideo.id);
+  console.log("In video", props.mainVideo);
   return (
     <div className="hero__info">
       <Info
@@ -39,11 +39,11 @@ const Video = props => {
           </div>
         </form>
         <div className="comment__container"></div>
-        {/* {console.log("GGGGGGG", props.mainVideo.comments.length)} */}
         {props.mainVideo.comments.map(comment => (
           <Comment
+            key={comment.id}
             name={comment.name}
-            timestamp={comment.timeStamp}
+            timestamp={comment.timestamp}
             comment={comment.comment}
           />
         ))}

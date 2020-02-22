@@ -9,8 +9,9 @@ class VideoList extends Component {
       <aside className="sidevideo">
         <h2 className="sidevideo__header">Next Video</h2>
         {this.props.videoList.map(list => (
-          <Link style={{ textDecoration: 'none' }} to={`/videos/${list.id}`}>
-            <div className="sidevideo__container">
+          <Link style={{ textDecoration: 'none' }} to={`/videos/${list.id}`} key={list.id}>
+            
+            <div className="sidevideo__container">         
               <img src={list.image} alt="" />
               <div>
                 <p className="sidevideo__ellipsis">{list.title}</p>
@@ -19,7 +20,9 @@ class VideoList extends Component {
             </div>
           </Link>
         ))}
+        
       </aside>
+      
     );
   }
 }
