@@ -7,6 +7,7 @@ function Upload() {
   return (
     <>
       <h1 className="heading">UpLoad Video</h1>
+      <div className="desktop__wrapper">
       <div className="upload-hero">
         <h4 className="upload-hero__subheading">VIDEO THUMBNAIL</h4>
         <video className="upload-hero__video-thumbnail" poster={Thumbnail}></video>
@@ -21,6 +22,7 @@ function Upload() {
           <button className="form__wrapper__button--noborder">CANCEL</button>
         </div>
       </form>
+      </div>
     </>
   );
 }
