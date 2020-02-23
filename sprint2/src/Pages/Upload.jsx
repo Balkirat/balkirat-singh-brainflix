@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 
 import Thumbnail from "../assets/Images/Upload-video-preview.jpg";
 import "./styles.scss";
