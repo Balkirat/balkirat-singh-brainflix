@@ -40,6 +40,7 @@ class Video extends Component {
       return dateB - dateA;
     });
     this.setState({
+      comment: "",
       comments: nextProps.mainVideo.comments,
       numberOfComments: nextProps.mainVideo.comments.length
     });
@@ -48,6 +49,7 @@ class Video extends Component {
     this.setState({
       comment: event.target.value
     });
+    event.value="";
   };
 
   handleSubmit = event => {
@@ -69,7 +71,6 @@ class Video extends Component {
           .get(`${API_URL}/videos/${this.props.mainVideo.id}?api_key=${apiKey}`)
           .then(response => {
             console.log("In handle submit to see new state ", response.data);
-
             console.log("In HomePAge", response.data);
             response.data.comments = response.data.comments.sort(function(
               a,
@@ -81,6 +82,7 @@ class Video extends Component {
             });
 
             this.setState({
+              comment: "",
               comments: response.data.comments,
               numberOfComments: response.data.comments.length
             });

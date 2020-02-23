@@ -10,10 +10,10 @@
   }
   @include desktop{
     padding:0 0 0 155px;
-    width: 80%;
+    width: 79.5%;
   }
   &__border{
-    border-top: 3px solid $border-color;
+    border-top: 2px solid $border-color;
   }
   &__text {
     font-size: 13px;
