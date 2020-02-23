@@ -13,7 +13,8 @@ class Video extends Component {
   constructor(props) {
     super(props);
     console.log("in constructor", this.props.mainVideo);
-    console.log("in constructor", this.props.mainVideo);
+    let number = this.props.mainVideo.comments.length;
+    console.log("in constructor", number);
     this.props.mainVideo.comments = this.props.mainVideo.comments.sort(function(
       a,
       b
@@ -24,11 +25,12 @@ class Video extends Component {
     });
     this.state = {
       comment: "",
-      comments: this.props.mainVideo.comments
+      comments: this.props.mainVideo.comments,
+      numberOfComments: number
     };
   }
   componentWillReceiveProps(nextProps) {
-    console.log("NEXT PROPS",nextProps);
+    console.log("NEXT PROPS", nextProps);
     nextProps.mainVideo.comments = nextProps.mainVideo.comments.sort(function(
       a,
       b
@@ -37,7 +39,10 @@ class Video extends Component {
         dateB = b.timestamp;
       return dateB - dateA;
     });
-    this.setState({ comments: nextProps.mainVideo.comments });  
+    this.setState({
+      comments: nextProps.mainVideo.comments,
+      numberOfComments: nextProps.mainVideo.comments.length
+    });
   }
   handleComment = event => {
     this.setState({
@@ -76,7 +81,8 @@ class Video extends Component {
             });
 
             this.setState({
-              comments: response.data.comments
+              comments: response.data.comments,
+              numberOfComments: response.data.comments.length
             });
           });
       });
@@ -94,7 +100,9 @@ class Video extends Component {
         />
         <Description description={this.props.mainVideo.description} />
         <section className="comments">
-          <h3 className="comments__heading">3 Comments</h3>
+          <h3 className="comments__heading">
+            {this.state.numberOfComments} Comments
+          </h3>
           <p className="comments__text">JOIN THE CONVERSATION</p>
           <form className="comments__form" onSubmit={this.handleSubmit}>
             <div>

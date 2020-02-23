@@ -17,6 +17,7 @@ let HeroVideo = props => {
           <span className="hero__play-progress">
             <hr className="hero__play-progress--bar"></hr>
           </span>
+          <span className="hero__time">0:00 / 0:42</span>
           <div>
             <img className="hero__fullscreenicon" src={FullscreenIcon} alt="" />
             <img className="hero__volumeicon" src={VolumeIcon} alt="" />
