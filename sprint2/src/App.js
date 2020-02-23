@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./styles.scss";
-import Header from "./components/Header/header";
+import Header from "./components/Header";
 import HomePage from "./Pages/HomePage/HomePage";
 import Upload from "./Pages/Upload/Upload";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";

@@ -1,8 +1,8 @@
 import React from "react";
-import SearchBar from "../SearchInput/searchInput";
-import MainLogo from "../Logo/logo";
-import UploadButton from "../UploadButton/uploadButton";
-import Icon from "../Icon/icon";
+import SearchBar from "../SearchInput";
+import MainLogo from "../Logo";
+import UploadButton from "../UploadButton";
+import Icon from "../Icon";
 import "./styles.scss";
 import {Link} from 'react-router-dom';
 
