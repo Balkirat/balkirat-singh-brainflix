@@ -1,7 +1,7 @@
 import React from "react";
 
 const Comment = props => {
-  console.log("In a comment to check key", props);
+//  console.log("In a comment to check key", props);
   function getTime(timeStamp) {
     let check = new Date(timeStamp);
     return check.toLocaleDateString();

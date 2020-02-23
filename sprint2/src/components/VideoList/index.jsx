@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 class VideoList extends Component {
   render(props) {
-    console.log("in side video", this.props.videoList);
+   // console.log("in side video", this.props.videoList);
     return (
       <aside className="sidevideo">
         <h2 className="sidevideo__header">Next Video</h2>

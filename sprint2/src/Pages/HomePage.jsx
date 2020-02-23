@@ -5,7 +5,7 @@ import VideoList from "../components/VideoList/index";
 import Video from "../components/Video/index";
 import HeroVideo from "../components/Hero/Hero";
 
-const apiKey = "2ae78d53-3395-4750-bd93-293f82257824";
+const apiKey = "2ae78d53-3395-4750-bd93-293f822578";
 // import "../styles.scss";
 
 class HomePage extends Component {
@@ -20,7 +20,7 @@ class HomePage extends Component {
 
   defaultVideo() {
     axios.get(`${API_URL}/videos?api_key=${apiKey}`).then(response => {
-      console.log(response.data);
+      //   console.log(response.data);
       this.setState({
         sideVideo: response.data
       });
@@ -41,27 +41,27 @@ class HomePage extends Component {
   }
 
   componentDidUpdate(prevProps) {
-    console.log("this is Previsos :", prevProps);
+    // console.log("this is Previsos :", prevProps);
 
     if (this.props.match.params.id !== prevProps.match.params.id) {
       if (this.props.match.params.id !== undefined) {
-        console.log("in if");
+        // console.log("in if");
         axios
           .get(
             `${API_URL}/videos/${this.props.match.params.id}?api_key=${apiKey}`
           )
           .then(response => {
-            console.log("In HomePAge", response.data);
+            console.log("In HomePAge......", response.data);
             this.setState({
               mainVideo: response.data
             });
           });
       } else {
-        console.log("in else");
+        //     console.log("in else");
         axios
           .get(`${API_URL}/videos/1af0jruup5gu?api_key=${apiKey}`)
           .then(response => {
-            console.log("In HomePAge", response.data);
+            //       console.log("In HomePAge", response.data);
             this.setState({
               mainVideo: response.data
             });
@@ -76,7 +76,7 @@ class HomePage extends Component {
   };
 
   render() {
-    console.log("to check props.param", this.props.match.params);
+    //  console.log("to check props.param", this.props.match.params);
     return (
       <>
         {this.state.showMainVideo && (
