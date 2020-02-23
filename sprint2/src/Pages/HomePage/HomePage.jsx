@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { API_URL } from "../App";
-import VideoList from "../components/VideoList/index";
-import Video from "../components/Video/index";
-import HeroVideo from "../components/Hero/Hero";
+import { API_URL } from "../../App";
+import VideoList from "../../components/VideoList/index";
+import Video from "../../components/Video/index";
+import HeroVideo from "../../components/Hero/Hero";
 
 const apiKey = "2ae78d53-3395-4750-bd93-293f822578";
 // import "../styles.scss";

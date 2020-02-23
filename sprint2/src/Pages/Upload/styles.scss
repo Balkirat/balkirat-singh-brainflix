@@ -1,7 +1,7 @@
-@import "../styles/partials/resets";
-@import "../styles/partials/variables";
-@import "../styles/partials/breakpoints";
-@import "../styles/partials/fonts";
+@import "../../styles/partials/resets";
+@import "../../styles/partials/variables";
+@import "../../styles/partials/breakpoints";
+@import "../../styles/partials/fonts";
 
 .heading {
   font-family: "AvenirBold";
@@ -29,11 +29,10 @@
     width: 40%;
     margin: 0 0 0 155px;
     padding: 0;
-    padding-bottom: 28px;
+    padding-bottom: 34px;
     border-bottom: 2px solid $secondry-color;
     border-top: 2px solid $secondry-color;
   }
-
 
   &__subheading {
     width: 100%;
@@ -94,6 +93,9 @@
       padding: 12px 20px;
       border: 1px solid $secondry-color;
       box-sizing: border-box;
+      ::placeholder{
+        color: red;
+      }
       @include tablet {
         margin-bottom: 40px;
       }
@@ -137,9 +139,11 @@
   }
 }
 
+.form__input--height::placeholder{
+  text-align: justify;
+}
 .desktop__wrapper{
   @include desktop{
     display: flex;
   }
- 
 }

@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import "./styles.scss";
 import Header from "./components/Header/header";
-import HomePage from "./Pages/HomePage";
-import Upload from "./Pages/Upload";
+import HomePage from "./Pages/HomePage/HomePage";
+import Upload from "./Pages/Upload/Upload";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 const API_URL = `https://project-2-api.herokuapp.com`;

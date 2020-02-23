@@ -1,6 +1,5 @@
 import React from "react";
-
-import Thumbnail from "../assets/Images/Upload-video-preview.jpg";
+import Thumbnail from "../../assets/Images/Upload-video-preview.jpg";
 import "./styles.scss";
 
 function Upload() {
@@ -16,7 +15,7 @@ function Upload() {
         <label className="form__label" for="titleVideo">TITLE YOUR VIDEO</label>
         <input className="form__input" placeholder="Add a description of your video"></input>
         <label className="form__label" for="videoDescription">ADD A VIDEO DESCRIPTION</label>
-        <input className="form__input--height" placeholder="Add a description of your video"></input>
+        <textarea className="form__input--height" placeholder="Add a description of your video"></textarea>
         <div className="form__wrapper">
           <button className="form__wrapper__button" >PUBLISH</button>
           <button className="form__wrapper__button--noborder">CANCEL</button>
