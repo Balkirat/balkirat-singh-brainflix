@@ -12,9 +12,7 @@ const apiKey = "2ae78d53-3395-4750-bd93-293f822578";
 class Video extends Component {
   constructor(props) {
     super(props);
-    console.log("in constructor", this.props.mainVideo);
     let number = this.props.mainVideo.comments.length;
-    console.log("in constructor", number);
     this.props.mainVideo.comments = this.props.mainVideo.comments.sort(function(
       a,
       b
@@ -30,7 +28,6 @@ class Video extends Component {
     };
   }
   componentWillReceiveProps(nextProps) {
-    console.log("NEXT PROPS", nextProps);
     nextProps.mainVideo.comments = nextProps.mainVideo.comments.sort(function(
       a,
       b
@@ -54,8 +51,6 @@ class Video extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    console.log("in handle submit", this.state.comment);
-    console.log("in handle submit 2", this.props.mainVideo.id);
     let commentObj = {
       name: "nigel",
       comment: this.state.comment
@@ -66,12 +61,9 @@ class Video extends Component {
         commentObj
       )
       .then(response => {
-        console.log(response.data);
         axios
           .get(`${API_URL}/videos/${this.props.mainVideo.id}?api_key=${apiKey}`)
           .then(response => {
-            console.log("In handle submit to see new state ", response.data);
-            console.log("In HomePAge", response.data);
             response.data.comments = response.data.comments.sort(function(
               a,
               b

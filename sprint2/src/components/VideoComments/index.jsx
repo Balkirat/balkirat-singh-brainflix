@@ -1,10 +1,7 @@
 import React from "react";
 
 const Comment = props => {
-//  console.log("In a comment to check key", props);
   function getTime(timeStamp) {
-    console.log(timeStamp);
-    console.log(new Date(timeStamp));
     let commentTime = "";
     let currentTimeStamp = Date.now();
     let differenceTime = currentTimeStamp - timeStamp;
@@ -29,14 +26,12 @@ const Comment = props => {
         commentTime = parseInt(hours) + " hours ago";
       }
     } else if (days < 31) {
-      console.log("in days");
       if (parseInt(days) === 1) {
         commentTime = parseInt(days) + " day ago";
       } else {
         commentTime = parseInt(days) + " days ago";
       }
     } else if (month >= 1 && month <= 12) {
-      console.log("in months", month);
       if (parseInt(month) === 1) {
         commentTime = parseInt(month) + "month ago";
       } else if (parseInt(month) === 2) {
@@ -63,7 +58,6 @@ const Comment = props => {
         commentTime = parseInt(month) + "months ago";
       }
     } else if (year >= 1) {
-      console.log("in years", year);
       if (year <= 1.5) {
         commentTime = "1 year ago";
       }

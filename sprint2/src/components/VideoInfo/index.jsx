@@ -3,7 +3,6 @@ import "./styles.scss";
 //import Video from "../Video/index";
 
 const Info = props => {
- // console.log("video info", props);
 
   function getTime(timeStamp){
    let check = new Date(timeStamp);
