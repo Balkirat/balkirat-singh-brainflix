@@ -5,10 +5,10 @@
 
 .video {
   padding: 0 16px;
-  @include tablet{
+  @include tablet {
     padding: 0 24px;
   }
-  @include desktop{
+  @include desktop {
     padding: 10px 155px;
     width: 100%;
   }
@@ -21,7 +21,7 @@
       font-size: 2.25rem;
       line-height: 44px;
     }
-    @include desktop{
+    @include desktop {
       width: 75%;
     }
   }
@@ -31,7 +31,7 @@
       justify-content: space-between;
       align-items: center;
     }
-    @include desktop{
+    @include desktop {
       width: 76%;
     }
   }
@@ -42,8 +42,8 @@
     align-items: center;
     @include tablet {
       margin-bottom: 0;
-        font-size: 1.2rem;
-        margin: 24px 0 0 0;
+      font-size: 1.2rem;
+      margin: 24px 0 0 0;
     }
     & h5 {
       margin: 0 8px 32px 0;
@@ -54,7 +54,7 @@
     & p {
       font-size: 0.75rem;
       margin: 0 0 32px 0;
-      opacity: 0.5; 
+      opacity: 0.5;
       @include tablet {
         margin: 0 0 24px 0;
       }

@@ -6,7 +6,6 @@ import Video from "../../components/Video";
 import HeroVideo from "../../components/Hero";
 
 const apiKey = "2ae78d53-3395-4750-bd93-293f822578";
-// import "../styles.scss";
 
 class HomePage extends Component {
   constructor() {
@@ -35,6 +34,7 @@ class HomePage extends Component {
   }
 
   componentDidMount() {
+ 
     this.defaultVideo();
   }
 
@@ -49,6 +49,7 @@ class HomePage extends Component {
             this.setState({
               mainVideo: response.data
             });
+            window.scrollTo(0, 0);
           });
       } else {
         axios
@@ -57,10 +58,13 @@ class HomePage extends Component {
             this.setState({
               mainVideo: response.data
             });
+            window.scrollTo(0, 0);
           });
       }
+      
     }
   }
+
   filteredVideoList = () => {
     return this.state.sideVideo.filter(
       item => item.id !== this.state.mainVideo.id

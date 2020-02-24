@@ -2,7 +2,6 @@ import React from "react";
 import "./styles.scss";
 
 const Info = props => {
-
   function getTime(timeStamp){
    let check = new Date(timeStamp);
     return check.toLocaleDateString();

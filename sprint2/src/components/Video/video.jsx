@@ -27,6 +27,7 @@ class Video extends Component {
       numberOfComments: number
     };
   }
+
   componentWillReceiveProps(nextProps) {
     nextProps.mainVideo.comments = nextProps.mainVideo.comments.sort(function(
       a,
@@ -42,6 +43,7 @@ class Video extends Component {
       numberOfComments: nextProps.mainVideo.comments.length
     });
   }
+
   handleComment = event => {
     this.setState({
       comment: event.target.value
@@ -72,7 +74,6 @@ class Video extends Component {
                 dateB = b.timestamp;
               return dateB - dateA;
             });
-
             this.setState({
               comment: "",
               comments: response.data.comments,
