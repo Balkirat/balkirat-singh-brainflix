@@ -17,6 +17,14 @@ class HomePage extends Component {
     };
   }
 
+  handleNewVideo = response => {
+    this.setState({
+      mainVideo: response.data,
+      showMainVideo: true
+    });
+    window.scrollTo(0, 0);
+  }
+
   defaultVideo() {
     axios.get(`${API_URL}/videos?api_key=${apiKey}`).then(response => {
       this.setState({
@@ -24,46 +32,30 @@ class HomePage extends Component {
       });
       axios
         .get(`${API_URL}/videos/${response.data[0].id}?api_key=${apiKey}`)
-        .then(response => {
-          this.setState({
-            mainVideo: response.data,
-            showMainVideo: true
-          });
-        });
+        .then(this.handleNewVideo);
     });
   }
 
   componentDidMount() {
- 
     this.defaultVideo();
   }
 
   componentDidUpdate(prevProps) {
-    if (this.props.match.params.id !== prevProps.match.params.id) {
+    if (this.props.match.params.id === prevProps.match.params.id) return;
+
       if (this.props.match.params.id !== undefined) {
         axios
           .get(
             `${API_URL}/videos/${this.props.match.params.id}?api_key=${apiKey}`
           )
-          .then(response => {
-            this.setState({
-              mainVideo: response.data
-            });
-            window.scrollTo(0, 0);
-          });
-      } else {
+          .then(this.handleNewVideo);
+          }
+       else {
         axios
           .get(`${API_URL}/videos/1af0jruup5gu?api_key=${apiKey}`)
-          .then(response => {
-            this.setState({
-              mainVideo: response.data
-            });
-            window.scrollTo(0, 0);
-          });
+          .then(this.handleNewVideo);
+          }
       }
-      
-    }
-  }
 
   filteredVideoList = () => {
     return this.state.sideVideo.filter(

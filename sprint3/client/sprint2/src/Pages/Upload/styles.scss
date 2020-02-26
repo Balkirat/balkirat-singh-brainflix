@@ -1,0 +1,150 @@
+@import "../../styles/partials/resets";
+@import "../../styles/partials/variables";
+@import "../../styles/partials/breakpoints";
+@import "../../styles/partials/fonts";
+
+.heading {
+  font-family: "AvenirBold";
+  border-top: 1px solid $secondry-color;
+  padding: 24px 16px 32px 16px;
+  @include tablet {
+    padding: 48px 24px 32px 24px;
+  }
+  @include desktop {
+    padding: 48px 155px 32px 155px;
+    // margin: 48px 155px 32px 155px;
+  }
+}
+.upload-hero {
+  padding: 0 16px;
+  width: 100%;
+  height: 100%;
+  margin-bottom: 32px;
+  box-sizing: border-box;
+  @include tablet {
+    padding: 0 24px;
+  }
+  @include desktop {
+    width: 40%;
+    margin: 0 0 0 155px;
+    padding: 0;
+    padding-bottom: 34px;
+    border-bottom: 2px solid $secondry-color;
+    border-top: 2px solid $secondry-color;
+  }
+  &__subheading {
+    width: 100%;
+    font-family: "AvenirDemiBold";
+    opacity: 0.5;
+    @include tablet {
+      border-top: 2px solid $secondry-color;
+      padding-top: 40px;
+    }
+    @include desktop {
+      border-top: none;
+    }
+  }
+  &__video-thumbnail {
+    border-radius: 4px;
+    width: 100%;
+    // height: 153px;
+    @include tablet {
+      width: 344px;
+      height: 183px;
+    }
+  }
+}
+
+.form {
+  padding: 0 16px;
+  @include tablet {
+    padding: 0 24px;
+  }
+  @include desktop {
+    width: 50%;
+    // padding: 40px 155px 0 0;
+    padding: 40px 0 0 0;
+    margin-right: 155px;
+    border-top: 2px solid $secondry-color;
+  }
+  &__label {
+    opacity: 0.3;
+    font-family: "AvenirDemiBold";
+  }
+  &__input {
+    border-style: groove;
+    border-radius: 4px;
+    height: 40px;
+    width: 100%;
+    margin-bottom: 24px;
+    padding: 12px 20px;
+    border: 1px solid $secondry-color;
+    box-sizing: border-box;
+    &--height {
+      border-style: groove;
+      border-radius: 4px;
+      width: 100%;
+      height: 143px;
+      text-align: start;
+      margin-bottom: 32px;
+      padding: 12px 20px;
+      border: 1px solid $secondry-color;
+      box-sizing: border-box;
+      @include tablet {
+        margin-bottom: 40px;
+      }
+      @include desktop {
+        height: 94px;
+      }
+    }
+  }
+  &__wrapper {
+    @include tablet {
+      display: flex;
+      justify-content: flex-end;
+      border-top: 2px solid$secondry-color;
+      padding-top: 40px;
+    }
+    &__button {
+      font-family: "AvenirDemiBold";
+      color: white;
+      width: 100%;
+      height: 50px;
+      border-style: none;
+      border-radius: 4px;
+      background-color: $background-color;
+      margin-bottom: 12px;
+      @include tablet {
+        width: 160px;
+        order: 1;
+      }
+      &--noborder {
+        font-family: "AvenirDemiBold";
+        width: 100%;
+        height: 50px;
+        border-style: none;
+        color: $background-color;
+        background-color: white;
+        @include tablet {
+          width: 160px;
+        }
+      }
+    }
+  }
+}
+
+.form__input--height::placeholder {
+  font-family: "AvenirRegular";
+  color: black;
+}
+
+.form__input::placeholder {
+  font-family: "AvenirRegular";
+  color: black;
+}
+
+.desktop__wrapper {
+  @include desktop {
+    display: flex;
+  }
+}

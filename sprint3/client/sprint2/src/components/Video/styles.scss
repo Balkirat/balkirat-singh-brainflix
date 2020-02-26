@@ -1,0 +1,287 @@
+@import "../../styles/partials/resets";
+@import "../../styles/partials/variables";
+@import "../../styles/partials/breakpoints";
+@import "../../styles/partials/fonts";
+
+.hero {
+  &__info {
+    @include desktop {
+      width: 70%;
+    }
+  }
+  box-sizing: border-box;
+  margin-bottom: 32px;
+  @include tablet {
+    margin-bottom: 48px;
+  }
+  @include desktop {
+    margin-bottom: 40px;
+  }
+  &__video {
+    position: relative;
+    &__poster {
+      box-sizing: border-box;
+      width: 100%;
+      height: 183px;
+      object-fit: cover;
+      @include tablet {
+        width: 100%;
+        height: 400px;
+        background: black;
+        padding: 0 34px;
+      }
+      @include desktop {
+        height: 540px;
+        width: 100%;
+        padding: 0 200px;
+      }
+    }
+    &__buttons {
+      position: absolute;
+      width: 100%;
+      bottom: 16px;
+      padding: 0 16px;
+      /* left: 32px; */
+      display: flex;
+      justify-content: center;
+      align-items: baseline;
+      box-sizing: border-box;
+      @include tablet {
+        //  margin: 0 32px;
+        padding: 0;
+        //   justify-content: flex-start;
+      }
+    }
+  }
+  &__play-icon {
+    padding: 5px 15px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 4px;
+  }
+  &__play-progress {
+    width: 53%;
+    height: 29px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 4px;
+    margin: 0 8px;
+    box-sizing: border-box;
+    @include tablet {
+      width: 67.57vw;
+      margin: 0 16px;
+    }
+    @include desktop {
+      width: 600px;
+    }
+    &--bar {
+      position: relative;
+      width: 90%;
+      display: block;
+      height: 1px;
+      border: 0;
+      border-top: 3px solid rgba(17, 17, 17, 1);
+      bottom: -13px;
+      left: 2vw;
+      @include tablet {
+        width: 77%;
+      }
+    }
+  }
+  &__time {
+    display: none;
+    @include tablet {
+      display: inline;
+      position: relative;
+      color: white;
+      right: 110px;
+      bottom: 9px;
+      margin-right: -80px;
+    }
+  }
+  &__fullscreenicon {
+    padding: 6.55px 10px;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+  }
+  &__volumeicon {
+    padding: 6.55px 10px;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+  }
+}
+
+.comments {
+  padding: 2rem 1rem 2.5rem 1rem;
+  font-family: "AvenirDemiBold";
+  font-size: 16px;
+  box-sizing: border-box;
+  @include tablet {
+    padding-left: 24px;
+    padding-right: 24px;
+    font-size: 1rem;
+  }
+  @include desktop {
+    padding: 48px 0 40px 155px;
+    width: 100%;
+  }
+  &__heading {
+    font-family: "AvenirDemiBold";
+    padding-bottom: 2rem;
+    @include tablet {
+      font-size: 1.5rem;
+      padding-bottom: 2rem;
+    }
+  }
+  &__text {
+    font-family: "AvenirRegular";
+    font-size: 10px;
+    margin: 0 0 4px 65px;
+    opacity: 0.5;
+    @include tablet {
+      font-size: 12px;
+    }
+  }
+  &__form {
+    display: flex;
+    // justify-content: space-evenly;
+    padding-bottom: 24px;
+    border-bottom: 2px solid $border-color;
+    box-sizing: border-box;
+    @include tablet {
+      width: 100%;
+      padding-bottom: 0;
+      justify-content: flex-start;
+    }
+    @include desktop {
+      width: 100%;
+    }
+    &__wrapper {
+      width: 100%;
+      margin-left: 16px;
+      box-sizing: border-box;
+      @include desktop {
+        width: auto;
+      }
+    }
+    &__textarea {
+      border-style: groove;
+      border-radius: 4px;
+      width: 100%;
+      height: 75px;
+      border: 1px solid $border-color;
+      box-shadow: 1px 1px 1px $border-color;
+      border-radius: 6px;
+      line-height: 18px;
+      font-family: "AvenirRegular";
+      padding: 9px;
+      margin: 0 0 16px 0;
+      font-size: 13px;
+      box-sizing: border-box;
+      &:focus {
+        outline: 0;
+        border: 2px solid $background-color;
+      }
+      @include tablet {
+        font-size: 14px;
+        padding: 1rem;
+        width: 67%;
+        height: 51px;
+      }
+      @include desktop {
+        width: 28.25vw;
+        height: 54px;
+        padding: 11px;
+      }
+    }
+    ::placeholder {
+      color: $primary-color;
+    }
+    &__button {
+      width: 100%;
+      height: 3rem;
+      border: none;
+      font-size: 12px;
+      font-family: "AvenirRegular";
+      font-size: 1rem;
+      border-radius: 4px;
+      color: #ffffff;
+      //margin-left: 16px;
+      background-color: $background-color;
+      box-sizing: border-box;
+      @include tablet {
+        width: 160px;
+        height: 52px;
+        float: right;
+        margin: 0 40px 0 16px;
+      }
+      @include desktop {
+        width: 130px;
+        margin: 0 0 0 16px;
+      }
+    }
+  }
+}
+
+.comments__section {
+  font-size: 0.75rem;
+  font-family: "AvenirRegular";
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 24px 0;
+  border-bottom: 2px solid $border-color;
+  line-height: 18px;
+  @include tablet {
+    font-size: 1rem;
+    width: 100%;
+    justify-content: flex-start;
+  }
+  @include desktop {
+    width: 100%;
+  }
+  &__image {
+    margin-right: 16px;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    background: lightgray;
+  }
+  &__text {
+    display: flex;
+    flex-wrap: wrap;
+    width: 70vw;
+    font-size: 0.75rem;
+    @include tablet {
+      font-size: 14px;
+      width: 100%;
+    }
+    &--inline {
+      width: 100%;
+      padding-bottom: 14px;
+      display: flex;
+      justify-content: space-between;
+      @include tablet {
+        justify-content: flex-start;
+        line-height: 22px;
+      }
+      & h3 {
+        width: 70%;
+        @include tablet {
+          font-family: "AvenirDemiBold";
+          width: max-content;
+          margin-right: 20px;
+          font-size: 1rem;
+        }
+      }
+      & p {
+        position: relative;
+        top: 2px;
+        opacity: 0.5;
+      }
+    }
+    &--opacity {
+      opacity: 0.7;
+    }
+  }
+}
