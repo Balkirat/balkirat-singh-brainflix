@@ -23,10 +23,10 @@ class HomePage extends Component {
       showMainVideo: true
     });
     window.scrollTo(0, 0);
-  }
+  };
 
   defaultVideo() {
-    axios.get(`${API_URL}/videos?api_key=${apiKey}`).then(response => {
+    axios.get(`http://localhost:8080/videos`).then(response => {
       this.setState({
         sideVideo: response.data
       });
@@ -43,19 +43,18 @@ class HomePage extends Component {
   componentDidUpdate(prevProps) {
     if (this.props.match.params.id === prevProps.match.params.id) return;
 
-      if (this.props.match.params.id !== undefined) {
-        axios
-          .get(
-            `${API_URL}/videos/${this.props.match.params.id}?api_key=${apiKey}`
-          )
-          .then(this.handleNewVideo);
-          }
-       else {
-        axios
-          .get(`${API_URL}/videos/1af0jruup5gu?api_key=${apiKey}`)
-          .then(this.handleNewVideo);
-          }
-      }
+    if (this.props.match.params.id !== undefined) {
+      axios
+        .get(
+          `${API_URL}/videos/${this.props.match.params.id}?api_key=${apiKey}`
+        )
+        .then(this.handleNewVideo);
+    } else {
+      axios
+        .get(`${API_URL}/videos/1af0jruup5gu?api_key=${apiKey}`)
+        .then(this.handleNewVideo);
+    }
+  }
 
   filteredVideoList = () => {
     return this.state.sideVideo.filter(
