@@ -5,7 +5,7 @@ import VideoList from "../../components/VideoList";
 import Video from "../../components/Video";
 import HeroVideo from "../../components/Hero";
 
-const apiKey = "2ae78d53-3395-4750-bd93-293f822578";
+//const apiKey = "2ae78d53-3395-4750-bd93-293f822578";
 
 class HomePage extends Component {
   constructor() {
@@ -31,7 +31,7 @@ class HomePage extends Component {
         sideVideo: response.data
       });
       axios
-        .get(`${API_URL}/videos/${response.data[0].id}?api_key=${apiKey}`)
+        .get(`${API_URL}/videos/${response.data[0].id}`)
         .then(this.handleNewVideo);
     });
   }
@@ -46,12 +46,12 @@ class HomePage extends Component {
     if (this.props.match.params.id !== undefined) {
       axios
         .get(
-          `${API_URL}/videos/${this.props.match.params.id}?api_key=${apiKey}`
+          `${API_URL}/videos/${this.props.match.params.id}`
         )
         .then(this.handleNewVideo);
     } else {
       axios
-        .get(`${API_URL}/videos/1af0jruup5gu?api_key=${apiKey}`)
+        .get(`${API_URL}/videos/1af0jruup5gu`)
         .then(this.handleNewVideo);
     }
   }

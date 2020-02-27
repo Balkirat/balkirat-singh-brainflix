@@ -48,7 +48,7 @@ class Video extends Component {
     this.setState({
       comment: event.target.value
     });
-    event.value="";
+    event.value = "";
   };
 
   handleSubmit = event => {

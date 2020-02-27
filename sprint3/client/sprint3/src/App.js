@@ -5,7 +5,8 @@ import HomePage from "./Pages/HomePage/HomePage";
 import Upload from "./Pages/Upload/Upload";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-const API_URL = `https://project-2-api.herokuapp.com`;
+//const API_URL = `https://project-2-api.herokuapp.com`;
+const API_URL = "http://localhost:8080";
 
 class App extends Component {
   render() {
@@ -16,7 +17,7 @@ class App extends Component {
           <Switch>
             <Route path="/" exact component={HomePage} />
             <Route path="/upload" component={Upload} />
-            <Route path="/videos/:id" component={HomePage}/>
+            <Route path="/videos/:id" component={HomePage} />
           </Switch>
         </Router>
       </>
