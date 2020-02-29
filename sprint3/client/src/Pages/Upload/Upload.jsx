@@ -9,8 +9,8 @@ function Upload() {
     event.preventDefault();
     const newVideo = {
       title: event.target.title.value,
-      channel: event.target.description.value,
-      image: "https://i.imgur.com/yFS8EBr.jpg"
+      description: event.target.description.value,
+      image: "http://c2.staticflickr.com/8/7218/7209301894_c99d3a33c2_h.jpg"
     };
     Axios.post(`${API_URL}/videos`, newVideo);
     console.log(event.target.title.value);
