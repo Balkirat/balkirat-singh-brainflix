@@ -59,13 +59,14 @@ class Video extends Component {
     };
     axios
       .post(
-        `${API_URL}/videos/${this.props.mainVideo.id}/comments?api_key=${apiKey}`,
+        `${API_URL}/videos/${this.props.mainVideo.id}/comments`,
         commentObj
       )
       .then(response => {
         axios
-          .get(`${API_URL}/videos/${this.props.mainVideo.id}?api_key=${apiKey}`)
+          .get(`${API_URL}/videos/${this.props.mainVideo.id}`)
           .then(response => {
+            console.log(response.data);
             response.data.comments = response.data.comments.sort(function(
               a,
               b
