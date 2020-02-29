@@ -8,12 +8,10 @@ const router = express.Router();
 router.get("/", (req, res) => res.json(videoList));
 
 router.get("/:id", (req, res) => {
-  //  console.log("it is a main video:",mainVideo);
   console.log(req.params.id);
   const rightId = mainVideo.find(video => video.id === req.params.id);
   if (rightId) {
     console.log("in filter");
-    // const data = mainVideo.filter(video => video.id === req.params.id);
     res.json(mainVideo.find(video => video.id === req.params.id));
   } else {
     res.status(404).json({ message: "No video with that id exists" });
@@ -76,9 +74,6 @@ router.post("/:id/comments", (req, res) => {
     timestamp: Date.now()
   };
   res.status(200).json(videoComment);
-//   mainVideo.map(comment => {
-//     console.log("this is a comment:", comment.comments);
-//   });
   const videoObj = mainVideo.find(video => video.id === req.params.id);
   console.log("it is a video obj", videoObj);
   videoObj.comments.push(videoComment);

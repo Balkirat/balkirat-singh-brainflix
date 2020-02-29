@@ -7,8 +7,6 @@ import axios from "axios";
 import { API_URL } from "../../App";
 import "./styles.scss";
 
-const apiKey = "2ae78d53-3395-4750-bd93-293f822578";
-
 class Video extends Component {
   constructor(props) {
     super(props);
@@ -66,7 +64,6 @@ class Video extends Component {
         axios
           .get(`${API_URL}/videos/${this.props.mainVideo.id}`)
           .then(response => {
-            console.log(response.data);
             response.data.comments = response.data.comments.sort(function(
               a,
               b

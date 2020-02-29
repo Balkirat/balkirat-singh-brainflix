@@ -3,8 +3,8 @@ import Logo from "../../assets/Logo/Logo.svg";
 
 function MainLogo() {
   return (
-    <div className = "header__logo">
-      <img src={Logo} alt="site logo"></img>
+    <div className="header__logo">
+      <img src={Logo} alt="Website logo"></img>
     </div>
   );
 }

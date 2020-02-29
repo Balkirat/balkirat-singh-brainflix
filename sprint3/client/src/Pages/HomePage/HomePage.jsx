@@ -5,8 +5,6 @@ import VideoList from "../../components/VideoList";
 import Video from "../../components/Video";
 import HeroVideo from "../../components/Hero";
 
-//const apiKey = "2ae78d53-3395-4750-bd93-293f822578";
-
 class HomePage extends Component {
   constructor() {
     super();
