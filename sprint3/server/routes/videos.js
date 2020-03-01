@@ -8,10 +8,8 @@ const router = express.Router();
 router.get("/", (req, res) => res.json(videoList));
 
 router.get("/:id", (req, res) => {
-  console.log(req.params.id);
   const rightId = mainVideo.find(video => video.id === req.params.id);
   if (rightId) {
-    console.log("in filter");
     res.json(mainVideo.find(video => video.id === req.params.id));
   } else {
     res.status(404).json({ message: "No video with that id exists" });
@@ -66,16 +64,15 @@ router.post("/", (req, res) => {
 });
 
 router.post("/:id/comments", (req, res) => {
-  console.log("Lets see the req:", req.body);
   const videoComment = {
     name: req.body.name,
     comment: req.body.comment,
     id: uuid.v4(),
+    likes: 0,
     timestamp: Date.now()
   };
   res.status(200).json(videoComment);
   const videoObj = mainVideo.find(video => video.id === req.params.id);
-  console.log("it is a video obj", videoObj);
   videoObj.comments.push(videoComment);
 });
 module.exports = router;

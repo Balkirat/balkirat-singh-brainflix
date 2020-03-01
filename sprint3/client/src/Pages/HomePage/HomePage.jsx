@@ -54,17 +54,12 @@ class HomePage extends Component {
   };
 
   componentDidMount() {
-    console.log("component did mount");
     this.defaultVideo();
   }
 
   componentDidUpdate(prevProps) {
-    console.log("component did update");
-    console.log("match param id:",this.props.match.params.id);
-    console.log("prev prop id: ",prevProps.match.params.id)
     if (this.props.match.params.id === prevProps.match.params.id) return;
     if (this.props.match.params.id !== undefined) {
-      console.log("component did update but in if ");
       axios
         .get(`${API_URL}/videos/${this.props.match.params.id}`)
         .then(this.handleNewVideo);
@@ -75,7 +70,6 @@ class HomePage extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    console.log("in parent handlecommit", event.target.comments.value);
     let commentObj = {
       name: "nigel",
       comment: event.target.comments.value
