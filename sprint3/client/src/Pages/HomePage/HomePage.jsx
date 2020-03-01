@@ -11,6 +11,7 @@ class HomePage extends Component {
     this.state = {
       sideVideo: [],
       mainVideo: {},
+      mainVideoComments: [],
       showMainVideo: false
     };
   }
@@ -21,6 +22,18 @@ class HomePage extends Component {
       showMainVideo: true
     });
     window.scrollTo(0, 0);
+    this.sortedComments(response);
+  };
+
+  sortedComments = response => {
+    response.data.comments = response.data.comments.sort(function(a, b) {
+      var dateA = a.timestamp,
+        dateB = b.timestamp;
+      return dateB - dateA;
+    });
+    this.setState({
+      mainVideoComments: response.data.comments
+    });
   };
 
   defaultVideo() {
@@ -34,30 +47,47 @@ class HomePage extends Component {
     });
   }
 
-  componentDidMount() {
-    this.defaultVideo();
-  }
-
-  componentDidUpdate(prevProps) {
-    if (this.props.match.params.id === prevProps.match.params.id) return;
-
-    if (this.props.match.params.id !== undefined) {
-      axios
-        .get(
-          `${API_URL}/videos/${this.props.match.params.id}`
-        )
-        .then(this.handleNewVideo);
-    } else {
-      axios
-        .get(`${API_URL}/videos/1af0jruup5gu`)
-        .then(this.handleNewVideo);
-    }
-  }
-
   filteredVideoList = () => {
     return this.state.sideVideo.filter(
       item => item.id !== this.state.mainVideo.id
     );
+  };
+
+  componentDidMount() {
+    console.log("component did mount");
+    this.defaultVideo();
+  }
+
+  componentDidUpdate(prevProps) {
+    console.log("component did update");
+    console.log("match param id:",this.props.match.params.id);
+    console.log("prev prop id: ",prevProps.match.params.id)
+    if (this.props.match.params.id === prevProps.match.params.id) return;
+    if (this.props.match.params.id !== undefined) {
+      console.log("component did update but in if ");
+      axios
+        .get(`${API_URL}/videos/${this.props.match.params.id}`)
+        .then(this.handleNewVideo);
+    } else {
+      axios.get(`${API_URL}/videos/1af0jruup5gu`).then(this.handleNewVideo);
+    }
+  }
+
+  handleSubmit = event => {
+    event.preventDefault();
+    console.log("in parent handlecommit", event.target.comments.value);
+    let commentObj = {
+      name: "nigel",
+      comment: event.target.comments.value
+    };
+    axios.post(`${API_URL}/videos/${this.state.mainVideo.id}/comments`, commentObj)
+      .then(response => {
+        axios.get(`${API_URL}/videos/${this.state.mainVideo.id}`)
+          .then(response => {
+            this.sortedComments(response);
+          });
+      });
+      event.target.reset();
   };
 
   render() {
@@ -68,7 +98,11 @@ class HomePage extends Component {
         )}
         <div className="desktop__flex">
           {this.state.showMainVideo && (
-            <Video mainVideo={this.state.mainVideo} />
+            <Video
+              mainVideo={this.state.mainVideo}
+              handleSubmit={this.handleSubmit}
+              mainVideoComments={this.state.mainVideoComments}
+            />
           )}
           {this.state.showMainVideo && (
             <VideoList videoList={this.filteredVideoList()} />

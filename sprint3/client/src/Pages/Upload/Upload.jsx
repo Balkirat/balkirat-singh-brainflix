@@ -10,9 +10,10 @@ function Upload() {
     const newVideo = {
       title: event.target.title.value,
       description: event.target.description.value,
-      image: "http://c2.staticflickr.com/8/7218/7209301894_c99d3a33c2_h.jpg"
+      image: "https://i.imgur.com/wpb4SD9.jpg"
     };
     Axios.post(`${API_URL}/videos`, newVideo);
+    event.target.reset();
   };
 
   return (
